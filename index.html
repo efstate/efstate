@@ -29,12 +29,10 @@
       margin-bottom: 30px;
     }
 
-    .images img,
-    .two-col img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 5px;
+    .images {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
     }
 
     .two-col {
@@ -46,6 +44,22 @@
 
     .two-col img {
       flex: 1 1 49%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    img.landscape {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    img.portrait {
+      max-height: 800px;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      align-self: start;
     }
 
     .caption {
@@ -64,6 +78,11 @@
       .two-col img {
         flex: 1 1 100%;
       }
+
+      img.portrait {
+        width: 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -73,14 +92,14 @@
 
     <div class="work">
       <div class="two-col">
-        <img src="images/TA1.jpg" alt="TA1" />
-        <img src="images/TA2.jpg" alt="TA2" />
+        <img src="images/TA1.jpg" alt="TA1" class="landscape" />
+        <img src="images/TA2.jpg" alt="TA2" class="landscape" />
       </div>
       <div class="images">
-        <img src="images/TA3.jpg" alt="TA3" />
-        <img src="images/TA4.JPG" alt="TA4" />
-        <img src="images/TA5.JPG" alt="TA5" />
-        <img src="images/TA6.JPG" alt="TA6" />
+        <img src="images/TA3.jpg" alt="TA3" class="landscape" />
+        <img src="images/TA4.JPG" alt="TA4" class="landscape" />
+        <img src="images/TA5.JPG" alt="TA5" class="landscape" />
+        <img src="images/TA6.JPG" alt="TA6" class="landscape" />
       </div>
       <div class="caption">
         <em>Thesaurus at</em>, 2025<br />
@@ -91,7 +110,7 @@
 
     <div class="work">
       <div class="images">
-        <img src="images/Cleat.JPG" alt="Cleat" />
+        <img src="images/Cleat.JPG" alt="Cleat" class="landscape" />
       </div>
       <div class="caption">
         <em>Cleat</em>, 2025<br />
@@ -102,11 +121,11 @@
 
     <div class="work">
       <div class="images">
-        <img src="images/NNP1.jpg" alt="NNP1" />
-        <img src="images/NNP2.jpg" alt="NNP2" />
-        <img src="images/NNP3.JPG" alt="NNP3" />
-        <img src="images/NNP4.JPG" alt="NNP4" />
-        <img src="images/NNP5.JPG" alt="NNP5" />
+        <img src="images/NNP1.jpg" alt="NNP1" class="portrait" />
+        <img src="images/NNP2.jpg" alt="NNP2" class="portrait" />
+        <img src="images/NNP3.JPG" alt="NNP3" class="portrait" />
+        <img src="images/NNP4.JPG" alt="NNP4" class="portrait" />
+        <img src="images/NNP5.JPG" alt="NNP5" class="portrait" />
       </div>
       <div class="caption">
         <em>Ninety nine percent</em>, 2025<br />
