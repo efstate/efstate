@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+  <div class="image-row">
+  <img src="images/TA1.jpg" >
+  <img src="images/TA2.jpg">
+  <img src="images/TA3.jpg" >
+</div>
+
 <head>
   <meta charset="UTF-8">
   <title>EF State</title>
@@ -8,6 +14,22 @@
       font-family: Arial, sans-serif;
     }
   </style>
+
+  <style>
+  .image-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    flex-wrap: wrap;
+  }
+
+  .image-row img {
+    width: 200px; 
+    height: auto;
+    object-fit: cover;
+  }
+</style>
+
 </head>
 
  
