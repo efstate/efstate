@@ -9,28 +9,49 @@
       font-family: Arial, sans-serif;
       font-size: 15pt;
       margin: 0;
-      padding: 5px; /* Minimal padding all around */
+      padding: 10px 15px;
+      background-color: #fff;
+      color: #000;
     }
 
     .container {
       max-width: 700px;
-      margin-left: 0; /* No left margin */
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 4px; /* Tight spacing between images */
-    }
-
-    .caption {
-      margin: 6px 0 18px 0; /* Slightly tightened spacing */
+      margin: 0 auto;
     }
 
     .title {
       font-weight: normal;
       font-size: 15pt;
-      margin-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .work {
+      margin-bottom: 40px;
+    }
+
+    .work img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .caption {
+      line-height: 1.5;
+    }
+
+    .caption em {
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .container {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -38,37 +59,40 @@
   <div class="container">
     <div class="title">EF State</div>
 
-    <img src="images/TA1.jpg" alt="TA1" />
-    <img src="images/TA2.jpg" alt="TA2" />
-    <img src="images/TA3.jpg" alt="TA3" />
-    <img src="images/TA4.JPG" alt="TA4" />
-    <img src="images/TA5.JPG" alt="TA5" />
-    <img src="images/TA6.JPG" alt="TA6" />
-    
-    <div class="caption">
-      <em>Thesaurus at</em>, 2025<br />
-      Antlers, basket, T-square<br />
-      31 x 52 x 40.5 in
+    <div class="work">
+      <img src="images/TA1.jpg" alt="Thesaurus at 1" />
+      <img src="images/TA2.jpg" alt="Thesaurus at 2" />
+      <img src="images/TA3.jpg" alt="Thesaurus at 3" />
+      <img src="images/TA4.JPG" alt="Thesaurus at 4" />
+      <img src="images/TA5.JPG" alt="Thesaurus at 5" />
+      <img src="images/TA6.JPG" alt="Thesaurus at 6" />
+      <div class="caption">
+        <em>Thesaurus at</em>, 2025<br />
+        Antlers, basket, T-square<br />
+        31 x 52 x 40.5 in
+      </div>
     </div>
 
-    <img src="images/Cleat.JPG" alt="Cleat" />
-    
-    <div class="caption">
-      <em>Cleat</em>, 2025<br />
-      Cans, rocks<br />
-      6 x 9 x 4 in
+    <div class="work">
+      <img src="images/Cleat.JPG" alt="Cleat" />
+      <div class="caption">
+        <em>Cleat</em>, 2025<br />
+        Cans, rocks<br />
+        6 x 9 x 4 in
+      </div>
     </div>
 
-    <img src="images/NNP1.jpg" alt="NNP1" />
-    <img src="images/NNP2.jpg" alt="NNP2" />
-    <img src="images/NNP3.JPG" alt="NNP3" />
-    <img src="images/NNP4.JPG" alt="NNP4" />
-    <img src="images/NNP5.JPG" alt="NNP5" />
-    
-    <div class="caption">
-      <em>Ninety nine percent</em>, 2025<br />
-      Pedestal, basketball hoop<br />
-      22.75 x 23.5 x 47 in
+    <div class="work">
+      <img src="images/NNP1.jpg" alt="Ninety nine percent 1" />
+      <img src="images/NNP2.jpg" alt="Ninety nine percent 2" />
+      <img src="images/NNP3.JPG" alt="Ninety nine percent 3" />
+      <img src="images/NNP4.JPG" alt="Ninety nine percent 4" />
+      <img src="images/NNP5.JPG" alt="Ninety nine percent 5" />
+      <div class="caption">
+        <em>Ninety nine percent</em>, 2025<br />
+        Pedestal, basketball hoop<br />
+        22.75 x 23.5 x 47 in
+      </div>
     </div>
   </div>
 </body>
