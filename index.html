@@ -43,34 +43,53 @@
       overflow-y: auto;
     }
 
-  .work-images {
-  display: none;
-  text-align: left; /* align to the left */
-}
+    .work-images {
+      display: none;
+      text-align: left; /* align to the left */
+    }
 
-.work-images.active {
-  display: block;
-}
+    .work-images.active {
+      display: block;
+    }
 
-.work-images img {
-  width: 80%;
-  max-width: 600px;
-  height: auto;
-  margin-bottom: 10px;
-  display: block; /* ensures images stack vertically and align left */
-}
+    /* Common style for all images */
+    .work-images img {
+      width: 80%;
+      max-width: 600px;
+      height: auto;
+      margin-bottom: 10px;
+      display: block;
+      text-align: left; /* Ensures images align left */
+    }
 
-.caption {
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 30px;
-  text-align: left; /* align caption text to the left */
-}
+    /* Landscape images - Make them a bit larger */
+    .work-images img.landscape {
+      width: 100%;
+      max-width: 700px;  /* Larger width for landscape images */
+      height: auto;
+      margin-bottom: 10px;
+      display: block;
+    }
 
-.caption em {
-  font-style: italic;
-}
+    /* Portrait images - Make them a bit smaller */
+    .work-images img.portrait {
+      width: 100%;
+      max-width: 500px;  /* Smaller width for portrait images */
+      height: auto;
+      margin-bottom: 10px;
+      display: block;
+    }
 
+    .caption {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      text-align: left; /* align caption text to the left */
+    }
+
+    .caption em {
+      font-style: italic;
+    }
 
     @media (max-width: 768px) {
       body {
@@ -112,23 +131,22 @@
   </div>
 
   <div class="content">
-  <div id="thesaurus" class="work-images active">
-  <img src="images/TA1.jpg" alt="TA1">
-  <img src="images/TA2.jpg" alt="TA2">
-  <img src="images/TA3.jpg" alt="TA3">
-  <img src="images/TA4.JPG" alt="TA4">
-  <img src="images/TA6.JPG" alt="TA5">
-  <img src="images/TA5.JPG" alt="TA6">
-  <div class="caption">
-    <em>Thesaurus at</em>, 2025<br>
-    Antlers, basket, T-square<br>
-    31 x 52 x 40.5 in
-  </div>
-</div>
-
+    <div id="thesaurus" class="work-images active">
+      <img src="images/TA1.jpg" alt="TA1" class="landscape">
+      <img src="images/TA2.jpg" alt="TA2" class="landscape">
+      <img src="images/TA3.jpg" alt="TA3" class="landscape">
+      <img src="images/TA4.JPG" alt="TA4" class="landscape">
+      <img src="images/TA5.JPG" alt="TA5" class="landscape">
+      <img src="images/TA6.JPG" alt="TA6" class="landscape">
+      <div class="caption">
+        <em>Thesaurus at</em>, 2025<br>
+        Antlers, basket, T-square<br>
+        31 x 52 x 40.5 in
+      </div>
+    </div>
 
     <div id="cleat" class="work-images">
-      <img src="images/Cleat.JPG" alt="Cleat">
+      <img src="images/Cleat.JPG" alt="Cleat" class="landscape">
       <div class="caption">
         <em>Cleat</em>, 2025<br>
         Cans, rocks<br>
@@ -137,8 +155,8 @@
     </div>
 
     <div id="ninety" class="work-images">
-      <img src="images/NNP1.jpg" alt="NNP1">
-      <img src="images/NNP2.jpg" alt="NNP2">
+      <img src="images/NNP1.jpg" alt="NNP1" class="landscape">
+      <img src="images/NNP2.jpg" alt="NNP2" class="landscape">
       <div class="caption">
         <em>Ninety nine percent</em>, 2025<br>
         Pedestal, basketball hoop<br>
@@ -147,11 +165,11 @@
     </div>
 
     <div id="noun" class="work-images">
-      <img src="images/N1.jpg" alt="N1">
-      <img src="images/N2.jpg" alt="N2">
-      <img src="images/N3.jpg" alt="N3">
-      <img src="images/N4.jpg" alt="N4">
-      <img src="images/N5.jpg" alt="N5">
+      <img src="images/N1.jpg" alt="N1" class="portrait">
+      <img src="images/N2.jpg" alt="N2" class="portrait">
+      <img src="images/N3.jpg" alt="N3" class="portrait">
+      <img src="images/N4.jpg" alt="N4" class="portrait">
+      <img src="images/N5.jpg" alt="N5" class="portrait">
       <div class="caption">
         <em>Noun</em>, 2025<br>
         Disassembled light fixture, duct tape, bag<br>
@@ -160,7 +178,7 @@
     </div>
 
     <div id="lushlocklean" class="work-images">
-      <img src="images/LLL.JPG" alt="LLL">
+      <img src="images/LLL.JPG" alt="LLL" class="landscape">
       <div class="caption">
         <em>Lushlocklean</em>, 2025<br>
         Bicycle pedal, pipe, scaffolding clamp<br>
@@ -169,7 +187,7 @@
     </div>
 
     <div id="darn" class="work-images">
-      <img src="images/Darn.jpg" alt="Darn">
+      <img src="images/Darn.jpg" alt="Darn" class="portrait">
       <div class="caption">
         <em>Darn</em>, 2025<br>
         Plaster<br>
