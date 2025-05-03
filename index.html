@@ -43,33 +43,34 @@
       overflow-y: auto;
     }
 
-    .work-images {
-      display: none;
-      text-align: center;
-    }
+  .work-images {
+  display: none;
+  text-align: left; /* align to the left */
+}
 
-    .work-images.active {
-      display: block;
-    }
+.work-images.active {
+  display: block;
+}
 
-    .work-images img {
-      width: 80%;
-      max-width: 600px;
-      height: auto;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
+.work-images img {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  margin-bottom: 10px;
+  display: block; /* ensures images stack vertically and align left */
+}
 
-    .caption {
-      font-size: 14px;
-      line-height: 1.5;
-      margin-bottom: 30px;
-      text-align: center;
-    }
+.caption {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  text-align: left; /* align caption text to the left */
+}
 
-    .caption em {
-      font-style: italic;
-    }
+.caption em {
+  font-style: italic;
+}
+
 
     @media (max-width: 768px) {
       body {
