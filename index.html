@@ -2,174 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EF State</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artwork Viewer</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      font-size: 14pt;
-      margin: 0;
-      padding: 8px 12px;
-      background-color: #fff;
-      color: #000;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0;
-    }
-
-    .title {
-      font-size: 14pt;
-      font-weight: normal;
-      margin-bottom: 20px;
-    }
-
-    .work {
-      margin-bottom: 30px;
-    }
-
-    .images {
       display: flex;
-      flex-direction: column;
-      gap: 5px;
+      flex-direction: row;
+      min-height: 100vh;
     }
 
-    .two-col {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-bottom: 5px;
+    .sidebar {
+      width: 250px;
+      background-color: #f4f4f4;
+      border-right: 1px solid #ccc;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
-    .two-col img {
-      flex: 1 1 49%;
-      height: auto;
-      object-fit: cover;
+    .sidebar h3 {
+      margin-top: 0;
+      font-size: 18px;
     }
 
-    img.landscape {
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 10px;
+      cursor: pointer;
+      color: #007acc;
+      font-size: 16px;
+    }
+
+    .sidebar li:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .work-images {
+      display: none;
+    }
+
+    .work-images.active {
+      display: block;
+    }
+
+    .work-images img {
       width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    img.portrait {
-      max-height: 800px;
-      width: auto;
       max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
       display: block;
-      align-self: start;
     }
 
     .caption {
-      line-height: 1.4;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 30px;
     }
 
     .caption em {
       font-style: italic;
     }
 
-    @media (max-width: 600px) {
-      .two-col {
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
         flex-direction: column;
       }
 
-      .two-col img {
-        flex: 1 1 100%;
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
       }
 
-      img.portrait {
-        width: 100%;
-        height: auto;
+      .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .sidebar li {
+        flex: 1 1 auto;
+      }
+
+      .content {
+        padding: 15px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="title">EF State</div>
 
-    <div class="work">
-      <div class="two-col">
-        <img src="images/TA1.jpg" alt="TA1" class="landscape" />
-        <img src="images/TA2.jpg" alt="TA2" class="landscape" />
-      </div>
-      <div class="images">
-        <img src="images/TA3.jpg" alt="TA3" class="landscape" />
-        <img src="images/TA4.JPG" alt="TA4" class="landscape" />
-        <img src="images/TA6.JPG" alt="TA5" class="landscape" />
-        <img src="images/TA5.JPG" alt="TA6" class="landscape" />
-      </div>
+  <div class="sidebar">
+    <h3>Works</h3>
+    <ul>
+      <li onclick="showWork('thesaurus')">Thesaurus at</li>
+      <li onclick="showWork('cleat')">Cleat</li>
+      <li onclick="showWork('ninety')">Ninety nine percent</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div id="thesaurus" class="work-images active">
+      <img src="images/TA1.jpg" alt="TA1">
+      <img src="images/TA2.jpg" alt="TA2">
       <div class="caption">
-        <em>Thesaurus at</em>, 2025<br />
-        Antlers, basket, T-square<br />
+        <em>Thesaurus at</em>, 2025<br>
+        Antlers, basket, T-square<br>
         31 x 52 x 40.5 in
       </div>
     </div>
 
-    <div class="work">
-      <div class="images">
-        <img src="images/Cleat.JPG" alt="Cleat" class="landscape" />
-      </div>
+    <div id="cleat" class="work-images">
+      <img src="images/Cleat.JPG" alt="Cleat">
       <div class="caption">
-        <em>Cleat</em>, 2025<br />
-        Cans, rocks<br />
+        <em>Cleat</em>, 2025<br>
+        Cans, rocks<br>
         6 x 9 x 4 in
       </div>
     </div>
 
-    <div class="work">
-      <div class="images">
-        <img src="images/NNP1.jpg" alt="NNP1" class="portrait" />
-        <img src="images/NNP2.jpg" alt="NNP2" class="portrait" />
-        <img src="images/NNP3.JPG" alt="NNP3" class="portrait" />
-        <img src="images/NNP4.JPG" alt="NNP4" class="portrait" />
-        <img src="images/NNP5.JPG" alt="NNP5" class="portrait" />
-      </div>
+    <div id="ninety" class="work-images">
+      <img src="images/NNP1.jpg" alt="NNP1">
+      <img src="images/NNP2.jpg" alt="NNP2">
       <div class="caption">
-        <em>Ninety nine percent</em>, 2025<br />
-        Pedestal, basketball hoop<br />
+        <em>Ninety nine percent</em>, 2025<br>
+        Pedestal, basketball hoop<br>
         22.75 x 23.5 x 47 in
       </div>
     </div>
-
-    <div class="work">
-      <div class="images">
-        <img src="images/N1.jpg" alt="N1" class="portrait" />
-        <img src="images/N2.jpg" alt="N2" class="portrait" />
-        <img src="images/N3.jpg" alt="N3" class="portrait" />
-        <img src="images/N4.jpg" alt="N4" class="portrait" />
-        <img src="images/N5.jpg" alt="N5" class="portrait" />
-      </div>
-      <div class="caption">
-        <em>Noun</em>, 2025<br />
-        Disassembled light fixture, duct tape, bag<br />
-        10.25 x 7.5 x 34 in
-      </div>
-    </div>
-
-    <div class="work">
-      <div class="images">
-        <img src="images/LLL.JPG" alt="LLL" class="landscape" />
-      </div>
-      <div class="caption">
-        <em>Lushlocklean</em>, 2025<br />
-        Bicycle pedal, pipe, scaffolding clamp<br />
-        10 x 4 x 7 in
-      </div>
-    </div>
-
-    <div class="work">
-      <div class="images">
-        <img src="images/Darn.jpg" alt="Darn" class="landscape" />
-      </div>
-      <div class="caption">
-        <em>Darn</em>, 2025<br />
-        Plaster<br />
-        19 x 5 in
-      </div>
-    </div>
   </div>
+
+  <script>
+    function showWork(id) {
+      const works = document.querySelectorAll('.work-images');
+      works.forEach(work => work.classList.remove('active'));
+      const selected = document.getElementById(id);
+      if (selected) {
+        selected.classList.add('active');
+        selected.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+
 </body>
 </html>
