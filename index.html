@@ -78,12 +78,28 @@
     }
 
     .image-gallery img {
-      width: 90%;
-      max-width: 700px;
       height: auto;
       margin-bottom: 10px;
       border-radius: 4px;
     }
+
+    .landscape-img {
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .portrait-img {
+      width: 50%;
+      max-width: 400px;
+    }
+
+    /* Optional custom size tweaks */
+    .TA1 { width: 75%; }
+    .TA2 { width: 85%; }
+    .TA3 { width: 65%; }
+    .TA4 { width: 70%; }
+    .TA5 { width: 90%; }
+    .TA6 { width: 60%; }
 
     @media (max-width: 768px) {
       body {
@@ -118,11 +134,18 @@
         align-items: flex-start;
       }
 
-      .image-gallery img {
-        width: 100%;
+      .landscape-img, .portrait-img {
+        width: 100% !important;
+        max-width: none !important;
       }
     }
   </style>
+  <script>
+    function showWork(id) {
+      document.querySelectorAll('.work-images').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </head>
 <body>
 
@@ -142,6 +165,8 @@
   </div>
 
   <div class="content">
+
+    <!-- Thesaurus at -->
     <div id="thesaurus" class="work-images active">
       <div class="work-item">
         <div class="caption">
@@ -150,16 +175,17 @@
           31 x 52 x 40.5 in
         </div>
         <div class="image-gallery">
-          <img src="images/TA1.jpg" alt="TA1">
-          <img src="images/TA2.jpg" alt="TA2">
-          <img src="images/TA3.jpg" alt="TA3">
-          <img src="images/TA4.JPG" alt="TA4">
-          <img src="images/TA6.JPG" alt="TA6">
-          <img src="images/TA5.JPG" alt="TA5">
+          <img src="images/TA1.jpg" class="landscape-img TA1" alt="TA1">
+          <img src="images/TA2.jpg" class="landscape-img TA2" alt="TA2">
+          <img src="images/TA3.jpg" class="landscape-img TA3" alt="TA3">
+          <img src="images/TA4.JPG" class="landscape-img TA4" alt="TA4">
+          <img src="images/TA5.JPG" class="landscape-img TA5" alt="TA5">
+          <img src="images/TA6.JPG" class="landscape-img TA6" alt="TA6">
         </div>
       </div>
     </div>
 
+    <!-- Cleat -->
     <div id="cleat" class="work-images">
       <div class="work-item">
         <div class="caption">
@@ -168,11 +194,12 @@
           6 x 9 x 4 in
         </div>
         <div class="image-gallery">
-          <img src="images/Cleat.JPG" alt="Cleat">
+          <img src="images/Cleat.JPG" class="landscape-img" alt="Cleat">
         </div>
       </div>
     </div>
 
+    <!-- Ninety nine percent -->
     <div id="ninety" class="work-images">
       <div class="work-item">
         <div class="caption">
@@ -181,86 +208,82 @@
           22.75 x 23.5 x 47 in
         </div>
         <div class="image-gallery">
-          <img src="images/NNP1.jpg" alt="NNP1">
-          <img src="images/NNP2.jpg" alt="NNP2">
-          <img src="images/NNP3.JPG" alt="NNP3">
-          <img src="images/NNP4.JPG" alt="NNP4">
-          <img src="images/NNP5.JPG" alt="NNP5">
+          <img src="images/NNP1.jpg" class="portrait-img" alt="NNP1">
+          <img src="images/NNP2.jpg" class="portrait-img" alt="NNP2">
+          <img src="images/NNP3.JPG" class="portrait-img" alt="NNP3">
+          <img src="images/NNP4.JPG" class="landscape-img" alt="NNP4">
+          <img src="images/NNP5.JPG" class="landscape-img" alt="NNP5">
         </div>
       </div>
     </div>
 
+    <!-- Noun -->
     <div id="noun" class="work-images">
       <div class="work-item">
         <div class="caption">
           <em>Noun</em>, 2025<br>
-          Disassembled light fixture, duct tape, bag<br>
+Disassembled light fixture, duct tape, bag
+<br>
           10.25 x 7.5 x 34 in
         </div>
         <div class="image-gallery">
-          <img src="images/N1.jpg" alt="N1">
-          <img src="images/N2.jpg" alt="N2">
-          <img src="images/N3.jpg" alt="N3">
-          <img src="images/N4.jpg" alt="N4">
-          <img src="images/N5.jpg" alt="N5">
+          <img src="images/N1.JPG" class="portrait-img" alt="N1">
+          <img src="images/N2.JPG" class="portrait-img" alt="N2">
+          <img src="images/N3.JPG" class="portrait-img" alt="N3">
+          <img src="images/N4.JPG" class="portrait-img" alt="N4">
+          <img src="images/N5.JPG" class="portrait-img" alt="N5">
         </div>
       </div>
     </div>
 
+    <!-- Lushlocklean -->
     <div id="lushlocklean" class="work-images">
       <div class="work-item">
         <div class="caption">
           <em>Lushlocklean</em>, 2025<br>
-          Bicycle pedal, pipe, scaffolding clamp<br>
-          10 x 4 x 7 in
+          Bicycle pedal, pipe, scaffolding clamp
+<br>
+10 x 4 x 7 in
         </div>
         <div class="image-gallery">
-          <img src="images/LLL.JPG" alt="LLL">
+          <img src="images/LLL.JPG" class="landscape-img" alt="LLL">
         </div>
       </div>
     </div>
 
+    <!-- Darn -->
     <div id="darn" class="work-images">
       <div class="work-item">
         <div class="caption">
           <em>Darn</em>, 2025<br>
-          Plaster<br>
-          19 x 5 in
+         Plaster<br>
+19 x 5 in
         </div>
         <div class="image-gallery">
-          <img src="images/Darn.jpg" alt="Darn">
+          <img src="images/Darn.jpg" class="landscape-img" alt="Darn">
         </div>
       </div>
     </div>
 
+    <!-- Le flâneur -->
     <div id="leflaneur" class="work-images">
       <div class="work-item">
         <div class="caption">
           <em>Le flâneur</em>, 2025<br>
-          Street sign, stroller<br>
-          Dimensions variable
+          Street sign, stroller
+<br>
+Dimensions variable
+
         </div>
         <div class="image-gallery">
-          <img src="images/LeF1.JPG" alt="Le flâneur 1">
-          <img src="images/LeF2.JPG" alt="Le flâneur 2">
-          <img src="images/LeF3.JPG" alt="Le flâneur 3">
-          <img src="images/LeF4.JPG" alt="Le flâneur 4">
+          <img src="images/LeF1.JPG" class="landscape-img" alt="LeF1">
+          <img src="images/LeF2.JPG" class="landscape-img" alt="LeF2">
+          <img src="images/LeF3.JPG" class="landscape-img" alt="LeF3">
+          <img src="images/LeF4.JPG" class="landscape-img" alt="LeF4">
         </div>
       </div>
     </div>
+
   </div>
-
-  <script>
-    function showWork(id) {
-      const works = document.querySelectorAll('.work-images');
-      works.forEach(work => work.classList.remove('active'));
-      const selected = document.getElementById(id);
-      if (selected) {
-        selected.classList.add('active');
-        selected.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  </script>
-
 </body>
 </html>
